@@ -20,6 +20,8 @@ public class TabBTN : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public Sprite selectedSprt;
     public Color tempColor;
 
+    public GameObject notification;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         tabGroup.OnTabSelected(this);
@@ -61,5 +63,10 @@ public class TabBTN : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         this.bacground.sprite = defaultSprt;
         this.bacground.color = tempColor;
+    }
+
+    public void Notif(bool active)
+    {
+        notification.SetActive(active);
     }
 }
