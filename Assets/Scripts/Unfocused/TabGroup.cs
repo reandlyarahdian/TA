@@ -9,6 +9,7 @@ public class TabGroup : MonoBehaviour
     public List<GameObject> tabsObject;
     public bool isReseted;
     public InputHandler inputHandler;
+    public Piece piece;
 
     public void Subs(TabBTN btn)
     {
@@ -49,9 +50,16 @@ public class TabGroup : MonoBehaviour
                 if (tabsObject[i].name == "NT")
                 {
                     inputHandler.Test = true;
+                    piece.Tetris = false;
+                }
+                else if (tabsObject[i].name == "FB")
+                {
+                    piece.Tetris = true;
+                    inputHandler.Test = false;
                 }
                 else
                 {
+                    piece.Tetris = false;
                     inputHandler.Test = false;
                 }
             }

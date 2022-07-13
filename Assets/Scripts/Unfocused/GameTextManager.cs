@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class GameTextManager : MonoBehaviour
 {
-    private enum AudioClipType
-    {
-        GoodWord = 0,
-        GoodLetter = 1,
-        BadLetter = 2
-    }
     [SerializeField]
     private FileData _data;
 
@@ -47,7 +41,6 @@ public class GameTextManager : MonoBehaviour
 
     public void CheckPlayerInput(char c)
     {
-        Debug.Log(c);
         if (typingManager.CheckCharacter(c))
         {
             UIManager.instance.UpdateText(typingManager.GetCurrentWord());

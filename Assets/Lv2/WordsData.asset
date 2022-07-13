@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d89db60aed03943865fc1236dce289, type: 3}
+  m_Name: WordsData
+  m_EditorClassIdentifier: 
+  data:
+  - words: Kini
+    point: 2
+  - words: Nanti
+    point: 2
+  - words: Ini
+    point: 2
+  - words: Aku
+    point: 1
+  - words: Kamu
+    point: 1
+  - words: Kucing
+    point: 3
+  - words: Anjing
+    point: 3
+  - words: Burung
+    point: 3
+  - words: Dia
+    point: 1
+  - words: Itu
+    point: 2
+  - words: Bagus
+    point: 4
+  - words: Jelek
+    point: 4
+  - words: Diskursus
+    point: 5
+  - words: Perdebatan
+    point: 6
+  - words: Materi
+    point: 6
+  - words: 'Jalan '
+    point: 5
+  - words: Kandang
+    point: 4
+  - words: Sepatu
+    point: 3
+  - words: Minyak
+    point: 3
+  - words: Kompor
+    point: 3
