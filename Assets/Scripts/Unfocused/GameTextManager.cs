@@ -8,9 +8,11 @@ public class GameTextManager : MonoBehaviour
     [SerializeField]
     private FileData _data;
 
-    private Queue<string> _wordsQueue;
+    public Queue<string> _wordsQueue;
     private ITextAssetReader _textReader;
     private TypingManager typingManager;
+
+    public int wordsComplited { get; private set; }
 
     void Start()
     {
@@ -31,7 +33,8 @@ public class GameTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!FindObjectOfType<InputHandler>().Test)
+            wordsComplited = 0;
     }
 
     public string GetNextWord()
@@ -46,6 +49,8 @@ public class GameTextManager : MonoBehaviour
             UIManager.instance.UpdateText(typingManager.GetCurrentWord());
             if (typingManager.CheckIfWordsFinished())
             {
+                wordsComplited++;
+                Debug.Log(wordsComplited);
                 typingManager.SetAsNewWord(GetNextWord());
                 UIManager.instance.UpdateText(typingManager.GetCurrentWord());
             }
