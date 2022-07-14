@@ -16,6 +16,8 @@ public class LevelController : MonoBehaviour
     Queue<string> words;
     [SerializeField] Image tray;
 
+    float times = 1;
+
     int targetPoint = 50;
 
     float seconds = 60;
@@ -72,31 +74,35 @@ public class LevelController : MonoBehaviour
     {
         if(textManager.wordsComplited == 10)
         {
-            tray.gameObject.SetActive(true);
-            timer.SetRemainDuration(1019);
-            StartCoroutine(trayactive());
+            Times();
+            timer.SetRemainDuration(1020);
         }
     }
 
-    IEnumerator trayactive()
+    public void Times()
     {
-        yield return new WaitForSeconds(.5f);
-        tray.gameObject.SetActive(false);
+        if(times <= 0)
+        {
+            tray.gameObject.SetActive(false);
+        }
+        else
+        {
+            tray.gameObject.SetActive(true);
+            times -=Time.deltaTime;
+        }
     }
 
     public void SocMedEnd()
     {
         if(words.Count == 0)
         {
-            tray.gameObject.SetActive(true);
-            timer.SetRemainDuration(1019);
-            StartCoroutine(trayactive());
+            Times();
+            timer.SetRemainDuration(1020);
         }
     }
 
     public void OvertimeEnd()
     {
-        tray.gameObject.SetActive(true);
-        StartCoroutine(trayactive());
+        Times();
     }
 }
