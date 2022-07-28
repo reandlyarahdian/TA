@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Item
   - Cart
+  - Block
+  - Home
   layers:
   - Default
   - TransparentFX

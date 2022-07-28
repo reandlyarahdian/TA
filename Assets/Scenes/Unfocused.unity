@@ -198,7 +198,7 @@ RectTransform:
   m_Children:
   - {fileID: 953894639}
   m_Father: {fileID: 1706893000}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1482,7 +1482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &498902416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4175,6 +4175,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1719033742}
   - {fileID: 94314887}
   m_Father: {fileID: 174719347}
   m_RootOrder: 3
@@ -4338,7 +4339,82 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   selectedSprt: {fileID: 2381070441135384947, guid: a6d73d345e16e9d41bc740af86722a67, type: 3}
   tempColor: {r: 1, g: 1, b: 1, a: 1}
-  notification: {fileID: 0}
+  notification: {fileID: 1719033741}
+--- !u!1 &1719033741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1719033742}
+  - component: {fileID: 1719033744}
+  - component: {fileID: 1719033743}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1719033742
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719033741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1706893000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -12, y: -16}
+  m_SizeDelta: {x: 45.38, y: 45.38}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1719033743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719033741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 621330a03dedcf04a987f3a0d30da336, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1719033744
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719033741}
+  m_CullTransparentMesh: 1
 --- !u!1 &1726034669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,6 +5169,7 @@ GameObject:
   - component: {fileID: 27736706}
   - component: {fileID: 352467492814036984}
   - component: {fileID: 352467492814036985}
+  - component: {fileID: 352467492814036986}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5134,6 +5211,52 @@ MonoBehaviour:
   piece: {fileID: 627730664}
   timer: {fileID: 352467492814036985}
   textManager: {fileID: 352467492814036976}
+  tray: {fileID: 498902417}
+  Sleepy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 352467492814036984}
+        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sleepy
+          m_BoolArgument: 0
+        m_CallState: 2
+  Socmed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 352467492814036984}
+        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Win
+          m_BoolArgument: 0
+        m_CallState: 2
+  Overtime:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 352467492814036984}
+        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
+        m_MethodName: Sound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SosMed
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &352467492814036985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5148,6 +5271,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 2147004866}
   MaxDuration: 0
+--- !u!114 &352467492814036986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352467492814036982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16059909074924d45bed0b85d4dc338b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SosMed
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: a97b28c00b2323143b55644cbfa8416d, type: 3}
+    Volume: 1
+    pitch: 1
+    loop: 0
+  - name: Sleepy
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5abf4ff62b079ae4fb0eeae4d1de39c9, type: 3}
+    Volume: 1
+    pitch: 1
+    loop: 0
+  - name: Win
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: b3ad62d51cf63ba429ada74a832edd07, type: 3}
+    Volume: 1
+    pitch: 1
+    loop: 0
+  - name: BGM
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 7ab361be3346d434599d9ea087c4cd94, type: 3}
+    Volume: 1
+    pitch: 1
+    loop: 1
+  audioMixer: {fileID: 24300002, guid: f818179738ad141419735a135470177e, type: 2}
+  BGM: {fileID: -9104243395854391019, guid: f818179738ad141419735a135470177e, type: 2}
 --- !u!114 &615825845016984203
 MonoBehaviour:
   m_ObjectHideFlags: 0

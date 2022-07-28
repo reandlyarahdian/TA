@@ -81,7 +81,30 @@ public class Timer : MonoBehaviour {
       End () ;
    }
 
-   private void UpdateUI (int seconds) {
+    public void BeginBack()
+    {
+        if (onTimerBeginAction != null)
+            onTimerBeginAction.Invoke();
+
+        StopAllCoroutines();
+        StartCoroutine(UpdateTimerBack());
+    }
+
+    private IEnumerator UpdateTimerBack()
+    {
+        while (remainingDuration > 0)
+        {
+            if (onTimerChangeAction != null)
+                onTimerChangeAction.Invoke(remainingDuration);
+
+            UpdateUI(remainingDuration);
+            remainingDuration--;
+            yield return new WaitForSeconds(1f);
+        }
+        End();
+    }
+
+    private void UpdateUI (int seconds) {
       uiText.text = string.Format ("{0:D2}:{1:D2}", seconds / 60, seconds % 60) ;
    }
 

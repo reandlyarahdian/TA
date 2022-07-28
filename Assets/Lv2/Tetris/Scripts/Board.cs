@@ -55,6 +55,9 @@ public class Board : MonoBehaviour
     {
         tilemap.ClearAllTiles();
 
+        point = 0;
+        Points.text = point.ToString();
+
         LevelController.instance.PointsSet();
         // Do anything else you want on game over here..
     }

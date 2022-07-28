@@ -2,22 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Events;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public Sound[] sounds;
+    public AudioMixerGroup audioMixer, BGM;
+
+    private UnityAction onEnd;
     private void Awake()
     {
         instance = this;
         foreach (var sound in sounds)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
+            sound.source.outputAudioMixerGroup = audioMixer;
+            if (sound.name == "BGM")
+                sound.source.outputAudioMixerGroup = BGM;
             sound.source.clip = sound.clip;
             sound.source.volume = sound.Volume;
             sound.source.pitch = sound.pitch;
             sound.source.loop = sound.loop;
         }
+    }
+
+    public AudioManager OnEnd(UnityAction action)
+    {
+        onEnd = action;
+        return this;
     }
 
     public void Play(string name)
@@ -56,10 +70,18 @@ public class AudioManager : MonoBehaviour
         }));
     }
 
-    IEnumerator AfterPlayed(AudioSource audioSource, Action action)
+    IEnumerator AfterPlayed(AudioSource audioSource, UnityAction action)
     {
         yield return new WaitWhile(() => audioSource.isPlaying);
-        action();
+        action.Invoke();
+    }
+
+    public AudioSource source(string name)
+    {
+        Sound sound = Array.Find(sounds, sound => sound.name == name);
+        if (sound == null) return null;
+        sound.source.Play();
+        return sound.source;
     }
 }
 

@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Assets.Scripts;
+using UnityEngine.Events;
 
 public class CharacterMove : MonoBehaviour
 {
 
     private Vector3 moveDirection = Vector3.zero;
-    private CharacterController controller;
+    private Rigidbody controller;
+
+    public UnityEvent tabrak, lari, tidak;
 
     public float Speed = 6.0f;
     public float rotateSpeed = 5f;
@@ -22,7 +23,7 @@ public class CharacterMove : MonoBehaviour
 
         GameManager.Instance.GameState = GameState.Start;
 
-        controller = GetComponent<CharacterController>();
+        controller = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,26 +32,17 @@ public class CharacterMove : MonoBehaviour
         switch (GameManager.Instance.GameState)
         {
             case GameState.Start:
-                if (Input.GetMouseButtonUp(0))
-                {
-                    var instance = GameManager.Instance;
-                    instance.GameState = GameState.Playing;
-                }
-
+                var instance = GameManager.Instance;
+                instance.GameState = GameState.Playing;
                 break;
             case GameState.Playing:
 
                 DetectDecellerateOrSwipeLeftRight();
 
-                controller.Move(moveDirection * Speed * Time.deltaTime);
+                controller.velocity = (moveDirection * Speed * Time.deltaTime);
 
                 break;
             case GameState.Dead:
-                if (Input.GetMouseButtonUp(0))
-                {
-                    //restart
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                }
                 break;
             default:
                 break;
@@ -58,25 +50,19 @@ public class CharacterMove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        GameManager.Instance.Die();
-    }
-
     private void DetectDecellerateOrSwipeLeftRight()
     {
-        if ((Input.GetKey(KeyCode.DownArrow)))
+        if ((Input.GetKey(KeyCode.S)))
         {
             Speed -= 0.5f;
             Speed = Speed < 0 ? 0 : Speed;
         }
         else
         {
-            Speed = 6.0f;
+            Speed = 2000.0f;
         }
 
-        if (GameManager.Instance.CanSwipe &&
-         (Input.GetKey(KeyCode.RightArrow)))
+        if ((Input.GetKeyUp(KeyCode.D)))
         {
             transform.Rotate(0, 90, 0);
             moveDirection = Quaternion.AngleAxis(90, Vector3.up) * moveDirection;
@@ -84,8 +70,7 @@ public class CharacterMove : MonoBehaviour
             //allow the user to swipe once per swipe location
             GameManager.Instance.CanSwipe = false;
         }
-        else if (GameManager.Instance.CanSwipe &&
-         (Input.GetKey(KeyCode.LeftArrow)))
+        else if ((Input.GetKeyUp(KeyCode.A)))
         {
             transform.Rotate(0, -90, 0);
             moveDirection = Quaternion.AngleAxis(-90, Vector3.up) * moveDirection;
@@ -96,8 +81,19 @@ public class CharacterMove : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Block"))
+            lari.Invoke();
+        else if(other.CompareTag("Home"))
+            tabrak.Invoke();
 
+    }
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Block") || other.CompareTag("Home"))
+            tidak.Invoke();
+    }
 
 }

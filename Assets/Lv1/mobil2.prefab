@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4273091624480357883}
   - component: {fileID: 1103442683746692081}
   - component: {fileID: 8817190692881958632}
-  - component: {fileID: 3492801451960909751}
+  - component: {fileID: 6711590986034812266}
   m_Layer: 0
   m_Name: mobil2
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2327778547096525870}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 64.4, y: -0.1, z: -154.3}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -127,7 +127,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3492801451960909751
+--- !u!114 &6711590986034812266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,6 +136,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2327778547096525870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6697bf74644003a41ae973f96bba5ebb, type: 3}
+  m_Script: {fileID: 11500000, guid: 119846ddbdec07645a1e2d38b67f89d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 20
+  turnSpeed: 100
+  WaitTime: 0

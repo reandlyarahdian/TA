@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Menu.unity
+    guid: 765f53d85d887b44ea80cca455fbaa12
+  - enabled: 1
+    path: Assets/Scenes/1.unity
+    guid: 2a2d7e58a1dd6ce43a59c6cc4abfb632
+  - enabled: 1
+    path: Assets/Scenes/2.unity
+    guid: 3e00acc8d24aedb4fa159c7265a50e1d
+  - enabled: 1
+    path: Assets/Scenes/3.unity
+    guid: de6775a775198244d93df9200aaddc40
+  - enabled: 1
+    path: Assets/Scenes/Manik!.unity
+    guid: 496794afa39b1344a9e5fefba25574d0
+  - enabled: 1
+    path: Assets/Scenes/Unfocused.unity
+    guid: b4196973ae4506c45ac6480339f83971
+  - enabled: 1
+    path: Assets/Scenes/UnwantedThought.unity
+    guid: e4e33568321ed4e4f865d9a48e41c59e
   m_configObjects: {}

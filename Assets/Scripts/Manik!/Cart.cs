@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using System.Linq;
 
 public class Cart : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Cart : MonoBehaviour
 
     private void Start()
     {
-		Cash = Random.Range(100f, 1000f);
+		Cash = Random.Range(99, 301);
 		text.text = Cash.ToString();
 		text.gameObject.SetActive(false);
     }
@@ -20,6 +21,7 @@ public class Cart : MonoBehaviour
     public void AddObject(string name, float price)
     {
 		NamePrice namePrice = new NamePrice(name, price);
+		ManikLevelManager.instance.Compare(namePrice);
 		names.Add(namePrice);
     }
 
@@ -30,10 +32,11 @@ public class Cart : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class NamePrice
 	{
-		public string Name { get; set; }
-		public float Val{ get; set; }
+		public string Name;
+		public float Val;
 		public NamePrice(string name, float val){
 			this.Name = name; this.Val = val;
 		}

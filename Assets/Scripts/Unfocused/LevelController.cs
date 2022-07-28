@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class LevelController : MonoBehaviour
     Queue<string> words;
     [SerializeField] Image tray;
 
+    public UnityEvent Sleepy, Socmed, Overtime;
+    AudioManager AudioManager;
+
     float times = 1;
 
     int targetPoint = 50;
@@ -24,16 +29,19 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
+        AudioManager = GetComponent<AudioManager>();
         instance = this;
         StartCoroutine(notifTimer());
         targetText.text = $"Target {targetPoint}";
         Timer();
+        AudioManager.Play("BGM");
     }
 
     private void Update()
     {
         words = textManager._wordsQueue;
         SleepyEnd();
+        SocMedEnd();
     }
 
     IEnumerator notifTimer()
@@ -41,7 +49,7 @@ public class LevelController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(5f);
-            tabs[Random.Range(0, 2)].Notif(true);
+            tabs[Random.Range(0, 3)].Notif(true);
             tabs[2].enabled = false;
             yield return new WaitForSeconds(20f);
             tabs[2].enabled = true;
@@ -72,10 +80,11 @@ public class LevelController : MonoBehaviour
 
     public void SleepyEnd()
     {
-        if(textManager.wordsComplited == 10)
+        if(textManager.wordsComplited == 12)
         {
             Times();
             timer.SetRemainDuration(1020);
+            Sleepy.Invoke();
         }
     }
 
@@ -98,11 +107,29 @@ public class LevelController : MonoBehaviour
         {
             Times();
             timer.SetRemainDuration(1020);
+            Socmed.Invoke();
         }
     }
 
     public void OvertimeEnd()
     {
         Times();
+        Overtime.Invoke();
+    }
+
+    public void Sound(string name)
+    {
+        StartCoroutine(AfterPlayed(AudioManager.source(name), SceneMenu));
+    }
+
+    IEnumerator AfterPlayed(AudioSource audioSource, UnityAction action)
+    {
+        yield return new WaitWhile(() => audioSource.isPlaying);
+        action.Invoke();
+    }
+
+    private void SceneMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -34,7 +34,7 @@ public class Cashier : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E) && isCart)
+        if (Input.GetKeyUp(KeyCode.Space) && isCart)
         {
             if(prices != null)
                 StopCoroutine(prices);
@@ -64,13 +64,19 @@ public class Cashier : MonoBehaviour
         cash -= Total;
         if(cash < 0)
         {
+            ManikLevelManager.instance.NoMoney.Invoke();
             cart.ShowMoney(cash);
         }
-        else
+        else if (cash >= 0 && ManikLevelManager.instance.pricePrices == null)
         {
+            ManikLevelManager.instance.Money.Invoke();
             cart.ShowMoney(cash);
         }
-        GameManager.Instance.Die();
+        else if (cash >= 0 && ManikLevelManager.instance.pricePrices != null)
+        {
+            ManikLevelManager.instance.TimeUp.Invoke();
+            cart.ShowMoney(cash);
+        }
     }
 
     private Dictionary<string, float> sum( List<NamePrice> prices)

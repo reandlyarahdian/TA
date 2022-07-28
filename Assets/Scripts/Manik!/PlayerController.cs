@@ -70,16 +70,11 @@ public class PlayerController : MonoBehaviour
 		switch (GameManager.Instance.GameState)
 		{
 			case GameState.Start:
-				if (Input.GetMouseButtonUp(0))
-				{
-					var instance = GameManager.Instance;
+				var instance = GameManager.Instance;
 					instance.GameState = GameState.Playing;
-				}
-
 				break;
 			case GameState.Playing:
-				Debug.Log("A");
-				Vector2 Moving = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+				Vector2 Moving = new Vector2(Input.GetAxis("H"), Input.GetAxis("V"));
 				//bool jump = Input.GetAxis("Jump") > 0;
 				bool sprint = Input.GetAxis("Fire3") > 0;
 				GroundedCheck();
@@ -88,10 +83,6 @@ public class PlayerController : MonoBehaviour
 
 				break;
 			case GameState.Dead:
-				if (Input.GetMouseButtonUp(0))
-				{
-					SceneManager.LoadScene("Menu");
-				}
 				break;
 			default:
 				break;
