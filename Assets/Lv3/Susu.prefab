@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4388786949454978148}
   - component: {fileID: 8606178971723073508}
   - component: {fileID: 2074790630674304433}
-  - component: {fileID: -504278647771941174}
   - component: {fileID: 1945525329793869230}
   - component: {fileID: -800269374341064906}
+  - component: {fileID: 6429605531457494399}
   m_Layer: 0
   m_Name: Susu
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-504278647771941174
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394473513761001647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.008644498, y: 0.0064507527, z: 0.0022289255}
-  m_Center: {x: -0.003147632, y: 0.0020433385, z: -0.000109959765}
 --- !u!54 &1945525329793869230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   TargetObjectTF: {fileID: 0}
   LaunchAngle: 0
   rigid: {fileID: 0}
+--- !u!64 &6429605531457494399
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394473513761001647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7327483132059656863, guid: 39797ff2040ad8a42bc16dcbcbb7caf9, type: 3}

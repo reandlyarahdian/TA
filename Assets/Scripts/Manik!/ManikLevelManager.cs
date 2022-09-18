@@ -60,6 +60,9 @@ public class ManikLevelManager : MonoBehaviour
         var groups = pricePrices.GroupBy(v => v.Name);
         foreach(var group in groups)
             prices = prices.Insert(prices.Length, $"{group.Key} {group.Count()} \n");
+        
+        if (groups == null)
+            prices = "";
         uGUI.text = prices;
     }
 

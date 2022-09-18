@@ -7,7 +7,7 @@ public class CharacterMove : MonoBehaviour
 {
 
     private Vector3 moveDirection = Vector3.zero;
-    private Rigidbody controller;
+    private CharacterController controller;
 
     public UnityEvent tabrak, lari, tidak;
 
@@ -23,7 +23,7 @@ public class CharacterMove : MonoBehaviour
 
         GameManager.Instance.GameState = GameState.Start;
 
-        controller = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class CharacterMove : MonoBehaviour
 
                 DetectDecellerateOrSwipeLeftRight();
 
-                controller.velocity = (moveDirection * Speed * Time.deltaTime);
+                controller.Move(moveDirection * Speed * Time.deltaTime);
 
                 break;
             case GameState.Dead:
@@ -59,7 +59,7 @@ public class CharacterMove : MonoBehaviour
         }
         else
         {
-            Speed = 2000.0f;
+            Speed = 7.0f;
         }
 
         if ((Input.GetKeyUp(KeyCode.D)))

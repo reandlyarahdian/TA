@@ -25,8 +25,6 @@ public class LevelController : MonoBehaviour
 
     int targetPoint = 50;
 
-    float seconds = 60;
-
     private void Start()
     {
         AudioManager = GetComponent<AudioManager>();
@@ -80,23 +78,22 @@ public class LevelController : MonoBehaviour
 
     public void SleepyEnd()
     {
-        if(textManager.wordsComplited == 12)
+        if(textManager.wordsComplited == 11)
         {
-            Times();
+            StartCoroutine(trays());
             timer.SetRemainDuration(1020);
-            Sleepy.Invoke();
+            
         }
     }
 
-    public void Times()
+    IEnumerator trays()
     {
-        if(times <= 0)
-        {
-            tray.gameObject.SetActive(false);
-        }
-        else
+        while (times > 0)
         {
             tray.gameObject.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            tray.gameObject.SetActive(false);
+            Sleepy.Invoke();
             times -=Time.deltaTime;
         }
     }
@@ -105,15 +102,12 @@ public class LevelController : MonoBehaviour
     {
         if(words.Count == 0)
         {
-            Times();
-            timer.SetRemainDuration(1020);
             Socmed.Invoke();
         }
     }
 
     public void OvertimeEnd()
     {
-        Times();
         Overtime.Invoke();
     }
 

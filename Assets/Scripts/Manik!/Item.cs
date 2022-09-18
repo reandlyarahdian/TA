@@ -71,7 +71,7 @@ public class Item : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Cart") || collision.collider.CompareTag("Item"))
+        if (collision.collider.CompareTag("Cart"))
         {
             transform.tag = "Item";
             transform.parent = collision.transform;

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2985619548858379000}
   - component: {fileID: 743248148406884320}
   - component: {fileID: 4800548038232090231}
-  - component: {fileID: -769691557719830796}
   - component: {fileID: 8365986863652324433}
   - component: {fileID: -314622245257596118}
+  - component: {fileID: 5328118619177710792}
   m_Layer: 0
   m_Name: Biskuit
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-769691557719830796
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356102891200045468}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.003947562, y: 0.003050999, z: 0.0021529626}
-  m_Center: {x: 0.0009737808, y: -1.3592208e-16, z: -0.000000001908145}
 --- !u!54 &8365986863652324433
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   TargetObjectTF: {fileID: 0}
   LaunchAngle: 0
   rigid: {fileID: 0}
+--- !u!64 &5328118619177710792
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356102891200045468}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7414509850709746518, guid: 39797ff2040ad8a42bc16dcbcbb7caf9, type: 3}

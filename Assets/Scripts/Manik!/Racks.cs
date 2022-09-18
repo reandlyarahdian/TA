@@ -27,7 +27,7 @@ public class Racks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cart"))
+        if (other.CompareTag("Cart") && other.gameObject.GetComponent<Cart>())
         {
             Cart = other.gameObject;
         }
@@ -35,7 +35,7 @@ public class Racks : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Cart"))
+        if (other.CompareTag("Cart") && other.gameObject.GetComponent<Cart>())
         {
             Cart = null;
         }

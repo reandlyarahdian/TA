@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5011878878263093493}
   - component: {fileID: 4059030348909827078}
   - component: {fileID: 6509754165968375873}
-  - component: {fileID: 1505131375444006330}
   - component: {fileID: 556004869530852888}
   - component: {fileID: 6933005308206087276}
+  - component: {fileID: 6865802948808995230}
   m_Layer: 0
   m_Name: Cereal Mantap
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1505131375444006330
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571825652462175802}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.005331248, y: 0.0040170155, z: 0.0020000008}
-  m_Center: {x: 0.0016656232, y: -0.0010085073, z: 6.310996e-11}
 --- !u!54 &556004869530852888
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   TargetObjectTF: {fileID: 0}
   LaunchAngle: 0
   rigid: {fileID: 0}
+--- !u!64 &6865802948808995230
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571825652462175802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5116160455557230834, guid: 39797ff2040ad8a42bc16dcbcbb7caf9, type: 3}

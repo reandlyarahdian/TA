@@ -790,7 +790,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4ac61eccf4c9b7745978a11e30380fb9, type: 3}
     m_FontSize: 76
     m_FontStyle: 0
     m_BestFit: 0
@@ -971,7 +971,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4ac61eccf4c9b7745978a11e30380fb9, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1238,8 +1238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.001, y: -263}
-  m_SizeDelta: {x: 38.002, y: 38.002}
+  m_AnchoredPosition: {x: 412.99994, y: -26.999376}
+  m_SizeDelta: {x: 79.1433, y: 79.1433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455651658
 MonoBehaviour:
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2639,9 +2639,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 172.57013, y: -2.6640015}
-  m_SizeDelta: {x: 323.824, y: -37.304}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062173071
 MonoBehaviour:
@@ -2663,7 +2663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d6a4f8aa72fefcd4fa6ebae6732f6f06, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3429,8 +3429,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 311.755, y: 0}
-  m_SizeDelta: {x: -311.757, y: -17}
+  m_AnchoredPosition: {x: -0.000030517578, y: -22.6853}
+  m_SizeDelta: {x: -0.002, y: -39.6853}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1305101123
 MonoBehaviour:
@@ -3519,8 +3519,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 327.42987, y: 2.6640015}
-  m_SizeDelta: {x: 676.176, y: 37.304016}
+  m_AnchoredPosition: {x: 0.000061035156, y: 2.6640015}
+  m_SizeDelta: {x: -0.000061035, y: 37.304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384682467
 MonoBehaviour:
@@ -3829,8 +3829,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: -263}
-  m_SizeDelta: {x: 38.002, y: 38.002}
+  m_AnchoredPosition: {x: 314, y: -27}
+  m_SizeDelta: {x: 79.1433, y: 79.1433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604933882
 MonoBehaviour:
@@ -3972,8 +3972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.996, y: -212.994}
-  m_SizeDelta: {x: 246.633, y: 58.908}
+  m_AnchoredPosition: {x: 308, y: 135}
+  m_SizeDelta: {x: 322.09, y: 76.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638200409
 MonoBehaviour:
@@ -5224,7 +5224,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Sleepy
+          m_StringArgument: Sleeping
           m_BoolArgument: 0
         m_CallState: 2
   Socmed:
@@ -5290,7 +5290,7 @@ MonoBehaviour:
     Volume: 1
     pitch: 1
     loop: 0
-  - name: Sleepy
+  - name: Sleeping
     source: {fileID: 0}
     clip: {fileID: 8300000, guid: 5abf4ff62b079ae4fb0eeae4d1de39c9, type: 3}
     Volume: 1
@@ -5331,7 +5331,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4ac61eccf4c9b7745978a11e30380fb9, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0
@@ -5412,7 +5412,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4ac61eccf4c9b7745978a11e30380fb9, type: 3}
     m_FontSize: 100
     m_FontStyle: 1
     m_BestFit: 0

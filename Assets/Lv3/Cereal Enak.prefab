@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3484053791157310652}
   - component: {fileID: 5819346537479438318}
   - component: {fileID: 6411298819604263386}
-  - component: {fileID: 8063474160271952721}
   - component: {fileID: 8137192263184322059}
   - component: {fileID: -3200142398375383739}
+  - component: {fileID: 686988165370720193}
   m_Layer: 0
   m_Name: Cereal Enak
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8063474160271952721
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3732260366990679411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.008591813, y: 0.0041704783, z: 0.0029883329}
-  m_Center: {x: 0.0032825782, y: 0.0007995081, z: -0.00062034023}
 --- !u!54 &8137192263184322059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   TargetObjectTF: {fileID: 0}
   LaunchAngle: 0
   rigid: {fileID: 0}
+--- !u!64 &686988165370720193
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732260366990679411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8750632182775770410, guid: 39797ff2040ad8a42bc16dcbcbb7caf9, type: 3}

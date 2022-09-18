@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 382247346927187268}
   - component: {fileID: 1139539251099175566}
   - component: {fileID: 8817565918726426838}
-  - component: {fileID: 9059349473197686141}
   - component: {fileID: -5161215766287653304}
   - component: {fileID: -5018810009465685791}
+  - component: {fileID: 4709950301900792942}
   m_Layer: 0
   m_Name: Cereal Murah
   m_TagString: Untagged
@@ -84,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9059349473197686141
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584493504990862499}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0039231377, y: 0.0041300184, z: 0.002000001}
-  m_Center: {x: -0.00013468697, y: -0.0010650099, z: 4.2983603e-11}
 --- !u!54 &-5161215766287653304
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   TargetObjectTF: {fileID: 0}
   LaunchAngle: 0
   rigid: {fileID: 0}
+--- !u!64 &4709950301900792942
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584493504990862499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4479439129713346257, guid: 39797ff2040ad8a42bc16dcbcbb7caf9, type: 3}
