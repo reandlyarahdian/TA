@@ -29,6 +29,6 @@ public class DepressedLevelManager : MonoBehaviour
     public void SceneMenu()
     {
         GameManager.Instance.Die();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("6");
     }
 }

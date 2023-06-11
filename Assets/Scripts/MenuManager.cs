@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public AudioManager audioManager;
     [SerializeField] string[] songName;
+    [SerializeField] Slider songSlider;
 
     private void Start()
     {
@@ -31,6 +33,22 @@ public class MenuManager : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
+        if(volume < 1)
+        {
+            volume = .001f;
+        }
+
+        RefreshSlider(volume);
+        audioMixer.SetFloat("Volume", Mathf.Log10(volume /100) * 20f);
+    }
+
+    public void SetVolumeFromSlider()
+    {
+        SetVolume(songSlider.value);
+    }
+
+    public  void RefreshSlider(float value)
+    {
+        songSlider.value = value;
     }
 }

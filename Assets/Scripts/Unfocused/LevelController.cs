@@ -46,11 +46,20 @@ public class LevelController : MonoBehaviour
     {
         while (true)
         {
+            int t = Random.Range(0, 3);
+            
+            for(int i = 0; i < 3; i++)
+            {
+                if(i == t) {
+                    tabs[t].Notif(true);
+                    tabs[t].enabled = true;
+                }                    
+                else{
+                    tabs[i].Notif(false);
+                    tabs[i].enabled = false;
+                }
+            }
             yield return new WaitForSeconds(5f);
-            tabs[Random.Range(0, 3)].Notif(true);
-            tabs[2].enabled = false;
-            yield return new WaitForSeconds(20f);
-            tabs[2].enabled = true;
         }
     }
 
@@ -124,6 +133,6 @@ public class LevelController : MonoBehaviour
 
     private void SceneMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("5");
     }
 }

@@ -2934,7 +2934,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Spasi - Interaksi
 
-    Mouse - Arah'
+    Panah - Arah'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cfc3eb7618a3c8a4184a6bf2a029b740, type: 2}
   m_sharedMaterial: {fileID: -2551478404882565603, guid: cfc3eb7618a3c8a4184a6bf2a029b740, type: 2}

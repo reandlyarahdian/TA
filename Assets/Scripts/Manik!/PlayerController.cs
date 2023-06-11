@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        CameraRotation(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0));
+        CameraRotation(new Vector3(Input.GetAxis("Debug Horizontal") * 5, Input.GetAxis("Debug Vertical") * 5, 0));
     }
 
     private void CameraRotation(Vector3 look)

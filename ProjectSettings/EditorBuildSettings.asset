@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UnwantedThought.unity
     guid: e4e33568321ed4e4f865d9a48e41c59e
+  - enabled: 1
+    path: Assets/Scenes/4.unity
+    guid: 911196344bbba284fad4638c591e4305
+  - enabled: 1
+    path: Assets/Scenes/5.unity
+    guid: 884d46271722cfa4baffc316eb7e21cf
+  - enabled: 1
+    path: Assets/Scenes/6.unity
+    guid: 71a4b229808f20047adce7e7fbd30dfa
   m_configObjects: {}

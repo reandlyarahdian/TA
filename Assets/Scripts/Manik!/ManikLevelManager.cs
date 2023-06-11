@@ -90,6 +90,6 @@ public class ManikLevelManager : MonoBehaviour
 
     private void SceneMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("4");
     }
 }

@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     public Sound[] sounds;
-    public AudioMixerGroup audioMixer, BGM;
+    public AudioMixerGroup audioMixer;
 
     private UnityAction onEnd;
     private void Awake()
@@ -19,8 +19,6 @@ public class AudioManager : MonoBehaviour
         {
             sound.source = gameObject.AddComponent<AudioSource>();
             sound.source.outputAudioMixerGroup = audioMixer;
-            if (sound.name == "BGM")
-                sound.source.outputAudioMixerGroup = BGM;
             sound.source.clip = sound.clip;
             sound.source.volume = sound.Volume;
             sound.source.pitch = sound.pitch;

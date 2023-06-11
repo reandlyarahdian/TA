@@ -1,29 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterMove : MonoBehaviour
 {
-
-    private Vector3 moveDirection = Vector3.zero;
-    private CharacterController controller;
-
-    public UnityEvent tabrak, lari, tidak;
-
     public float Speed = 6.0f;
     public float rotateSpeed = 5f;
-    private float y = 1f;
+
+    private float _Speed = 0f;
+    private float _RotateSpeed = 0f;
+
+    [SerializeField] Collider[] colliders;
+    [SerializeField] GameObject particle;
+
+    [SerializeField]UnityEvent kabur,
+    tabrak,
+    kanan,
+    kiri,
+    lurus,
+    putarbalik;
+
+
+    [SerializeField] private Check check;
 
     // Use this for initialization
     void Start()
     {
-        moveDirection = transform.forward;
-        moveDirection = transform.TransformDirection(moveDirection);
-
         GameManager.Instance.GameState = GameState.Start;
-
-        controller = GetComponent<CharacterController>();
+        check = Check.empty;
     }
 
     // Update is called once per frame
@@ -39,10 +45,14 @@ public class CharacterMove : MonoBehaviour
 
                 DetectDecellerateOrSwipeLeftRight();
 
-                controller.Move(moveDirection * Speed * Time.deltaTime);
-
                 break;
             case GameState.Dead:
+
+                StartCoroutine(enumerator(1.5f));
+
+                break;
+            case GameState.Idle:
+                _Speed = 0;
                 break;
             default:
                 break;
@@ -52,48 +62,48 @@ public class CharacterMove : MonoBehaviour
 
     private void DetectDecellerateOrSwipeLeftRight()
     {
-        if ((Input.GetKey(KeyCode.S)))
-        {
-            Speed -= 0.5f;
-            Speed = Speed < 0 ? 0 : Speed;
-        }
-        else
-        {
-            Speed = 7.0f;
-        }
+        _Speed = Input.GetAxis("Vertical") * Speed;
+        _RotateSpeed = Input.GetAxis("Horizontal");
 
-        if ((Input.GetKeyUp(KeyCode.D)))
-        {
-            transform.Rotate(0, 90, 0);
-            moveDirection = Quaternion.AngleAxis(90, Vector3.up) * moveDirection;
-            
-            //allow the user to swipe once per swipe location
-            GameManager.Instance.CanSwipe = false;
-        }
-        else if ((Input.GetKeyUp(KeyCode.A)))
-        {
-            transform.Rotate(0, -90, 0);
-            moveDirection = Quaternion.AngleAxis(-90, Vector3.up) * moveDirection;
-            
-            GameManager.Instance.CanSwipe = false;
-        }
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3
+            (0, _RotateSpeed * rotateSpeed * Time.deltaTime * Input.GetAxis("Vertical"), 0));
+    }
 
-
+    private void FixedUpdate()
+    {
+        transform.Translate(0, 0, Input.GetAxis("Vertical") * _Speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Block"))
-            lari.Invoke();
-        else if(other.CompareTag("Home"))
-            tabrak.Invoke();
-
+        if (check == Check.tabrak)
+            particle.SetActive(true);
+        else if (check == Check.lurus)
+            lurus.Invoke();
+        else if (check == Check.kiri)
+            kiri.Invoke();
+        else if (check == Check.kanan)
+            kanan.Invoke();
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Block") || other.CompareTag("Home"))
-            tidak.Invoke();
+        if (collision.collider.CompareTag("Block"))
+        {
+            check = collision.gameObject.GetComponent<EnumStoring>().check;
+            GameManager.Instance.GameState = GameState.Dead;
+        }
     }
 
+    IEnumerator enumerator(float num)
+    {
+        yield return new WaitForSeconds(num);
+        SceneManager.LoadScene(9);
+    }
+
+    public void Menang()
+    {
+        GameManager.Instance.GameState = GameState.Idle;
+        StartCoroutine(enumerator(5f));
+    }
 }
